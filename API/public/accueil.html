@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<head>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<body>
+
+    
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">
+                 <img src="bycicle.jpg" width="50" height="50" alt="">
+            </a>
+          <a class="navbar-brand" style="margin-left:50px;" href="index.html">Suivre les cyclistes</a>
+          <a class="navbar-brand" style="margin-left:50px;" href="test.html">Liste des cyclistes</a>
+          <a class="navbar-brand" style="margin-left:50px;" href="#">Historique des chutes</a>
+		  <a class="navbar-brand" style="margin-left:50px;" href="#">Ajouter cyclistes </a>
+          <a class="navbar-brand" style =" margin-left:60px;"href="authentif.html"><button type="button" class="btn btn-primary">Déconnexion</button></a>
+          
+          
+          
+        </nav>
+        <div class="container">
+          <h2 id="p1"></h2>
+          <h2 id="p2"></h2>
+		 <h2 id="p3"></h2>
+		 <h2 id="p4"></h2>
+        </div>
+        <script>
+          var today= new Date();
+          var date='Date : '+today.getFullYear()+'-'+(today.getMonth())+'-'+today.getDate();
+          var temp='Temperature prévu :  Temps clair  ';  // Integration API Meteo prévu  
+		  var dist='Distance moyenne :  /'; 
+		  var date2='Prochaine sortie : '+today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate(); 
+		  
+          document.getElementById("p1").innerHTML=date;
+          document.getElementById("p2").innerHTML=date2
+		  document.getElementById("p3").innerHTML=temp
+		 document.getElementById("p4").innerHTML=dist
+		  
+        </script>
+</body>
+
+
+
+</html>

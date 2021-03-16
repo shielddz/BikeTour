@@ -1,0 +1,112 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/64d58efce2.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="authentif.css" />
+    <title>Suivi de vélo</title>
+  </head>
+  <body>
+      
+    <div class="container">
+        
+      <div class="forms-container">
+          
+        <div class="signin-signup">
+            
+          <form action="accueil.html" class="sign-in-form" method="POST">
+              <a>
+            <img alt="Qries" src="bycicle.jpg"
+            width=200" height="200">
+         </a>
+            <h2 class="title">Authentification</h2>
+            <div class="input-field">
+              <i class="fas fa-user"></i>
+              <input type="text" placeholder="Nom d'utilisateur" id="user" name="username" />
+            </div>
+            <div class="input-field">
+              <i class="fas fa-lock"></i>
+              <input type="password" placeholder="Mot de passe" id="pass" name="password"/>
+            </div>
+            <button class="btn solid" id="btn">Se connecter</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="panels-container">
+        <div class="panel left-panel">
+          <div class="content">
+            <h2>Suivez vos cyclistes</h2>
+          </div>
+          <img src="img/log.svg" class="image" alt="" />
+        </div>
+        
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      window.onload = ()=> {
+        this.sessionStorage.setItem("username","admin");
+        this.sessionStorage.setItem("password","admin");
+      }
+      var input=document.getElementsByTagName('input');
+      var login=document.getElementById('btn');
+      var form = document.querySelector('form');
+      form.onsubmit = ()=>{return false}
+
+      login.onclick=()=>{
+        if((input[0].value !="") && (input[1].value!=""))
+        {
+          if((input[0].value==sessionStorage.getItem("username")) &&   (input[0].value == sessionStorage.getItem("password")))
+          {
+            form.onsubmit = ()=>{return 1}
+          }
+          else
+          {
+            if((input[0].value != sessionStorage.getItem("username")))
+            {
+              input[0].nextElementSibling.textContent = "Nom d'utilisateur incorrect";
+              setTimeout(()=>{
+              input[0].nextElementSibling.textContent = "";
+            },2000);
+            }
+
+            if((input[1].value != sessionStorage.getItem("password")))
+            {
+              input[1].nextElementSibling.textContent = "Mot de passe incorrect";
+              setTimeout(()=>{
+              input[1].nextElementSibling.textContent = "";
+            },2000);
+            }
+
+          }
+
+        }
+        else
+        {
+          if (input[0].value =="")
+          {
+            input[0].nextElementSibling.textContent = "Veuillez saisir le nom d'utilisateur";
+            setTimeout(()=>{
+              input[0].nextElementSibling.textContent = "";
+            },2000);
+          }
+          if (input[1].value =="")
+          {
+            input[1].nextElementSibling.textContent = "Veuillez saisir le mot de passe";
+            setTimeout(()=>{
+              input[1].nextElementSibling.textContent = "";
+            },2000);
+          }
+        }
+      }
+
+    </script>
+  </body>
+</html>
+

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="adduser.css">
+</head>
+<body>
+    <div class="popup" id="popup-1">
+      <div class="content">
+       <div class="close-btn" onclick="togglePopup()">
+        ×</div>
+    
+   <h1 style="color:#5995fd">Add User</h1> 
+   <div class="input-field"><input type="text" class="validate",placeholder="Identifiant"></div>
+     <div class="input-field"><input type="text" class="validate",placeholder="Prenom"></div>
+     <div class="input-field"><input type="password" class="validate",placeholder="Nom"></div>
+       <button class="second-button">ajouter</button>
+       
+         
+        
+      </div>
+     </div>
+     <button onclick="togglePopup()" class="first-button">Add</button>
+   <script>
+    function togglePopup() {
+    document.getElementById("popup-1")
+     .classList.toggle("active");
+   }
+   </script>
+   
+   </body>
+   </html>
