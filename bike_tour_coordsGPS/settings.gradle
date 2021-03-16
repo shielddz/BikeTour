@@ -1,0 +1,2 @@
+rootProject.name='bike_tour_coordsGPS'
+include ':app'
